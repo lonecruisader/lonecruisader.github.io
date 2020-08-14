@@ -7,8 +7,13 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-169289090-1', 'auto');
 ga('send', 'pageview', location.pathname);
-var url= "https://play.google.com/store/apps/details?id=com.dubiousknight.trollpeedika";
-window.location = url;
+ga('send', 'event', 'outbound_link', url,
+        {
+            'hitCallback': function () {
+                document.location = url;
+            }
+        }
+    );
 </script>
 <!-- End Google Analytics -->
 
