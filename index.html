@@ -5,13 +5,25 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-RGBW51PQP9');
-  gtag('event', 'open_share_link');
-setTimeout(sendGAEvent, 1000);
-console.log("hi");
-function sendGAEvent(){
-	var url = "https://play.google.com/store/apps/details?id=com.dubiousknight.trollpeedika";
-//	window.location.replace(url);
-}
+
+  setTimeout(forwardToPlayStore, 1000);
+  var sentEvent = false;
+
+  console.log("hi");
+  function forwardToPlayStore(){
+	  console.log("in forward play store");
+	  if(!sentEvent){
+		  console.log("in sent event");
+		sentEvent = true;
+		var url = "https://play.google.com/store/apps/details?id=com.dubiousknight.trollpeedika";
+  		//	window.location.replace(url);
+	  }
+  }
+
+  gtag('event', 'open_share_link', {
+    'event_callback': forwardToPlayStore
+  });
+
 </script>
 <!-- End Google Analytics -->
 
