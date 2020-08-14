@@ -11,14 +11,11 @@
   setTimeout(forwardToPlayStore, 5000);
   var sentEvent = false;
 
-  console.log("hi");
   function forwardToPlayStore(){
-	  console.log("in forward play store");
 	  if(!sentEvent){
-		  console.log("in sent event");
 		sentEvent = true;
 		var url = "https://play.google.com/store/apps/details?id=com.dubiousknight.trollpeedika";
-  		//	window.location.replace(url);
+  		window.location.replace(url);
 	  }
   }
 
