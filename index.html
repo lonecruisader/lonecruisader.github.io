@@ -14,7 +14,14 @@
   function forwardToPlayStore(){
 	  if(!sentEvent){
 		sentEvent = true;
-		var url = "market://details?id=com.dubiousknight.trollpeedika";
+
+		var url = "";
+		if(/Android|webOS|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			var url = "market://details?id=com.dubiousknight.trollpeedika";
+		}else{
+			var url = "https://play.google.com/store/apps/details?id=com.dubiousknight.trollpeedika";
+		}
+
   		window.location.replace(url);
 	  }
   }
