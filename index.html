@@ -5,17 +5,11 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-RGBW51PQP9');
+  gtag('event', 'open share link');
 setTimeout(sendGAEvent, 1000);
 function sendGAEvent(){
-	ga('send', 'pageview', location.pathname);
 	var url = "https://play.google.com/store/apps/details?id=com.dubiousknight.trollpeedika";
-	ga('send', 'event', 'outbound_link', url,
-        	{
-            		'hitCallback': function () {
-                	document.location = url;
-            		}
-        	}	
-    	);
+	window.location.replace(url);
 }
 </script>
 <!-- End Google Analytics -->
